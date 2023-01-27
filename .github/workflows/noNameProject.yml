@@ -1,5 +1,5 @@
-name: Tests
-on: [push]
+name: AQATestProject
+on: [ push ]
 jobs:
   test:
     timeout-minutes: 60
