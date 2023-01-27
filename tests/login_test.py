@@ -12,8 +12,7 @@ class TestLoginPage:
         login_page.click(login_page.CONTINUE_WITH_EMAIL_BUTTON)
         login_page.fill_field(login_page.PASSWORD_FIELD, USER.PASSWORD)
         login_page.click(login_page.SUBMIT_PASSWORD_BUTTON)
-        profile = login_page.element_is_visible(login_page.PROFILE_DROPDOWN,30)
+        profile = login_page.element_is_visible(login_page.PROFILE_DROPDOWN, 30)
         profile_name = ('Britanney Byers' in profile.text)
 
-        assert profile_name == False
-
+        assert profile_name == True
