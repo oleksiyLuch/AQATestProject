@@ -4,7 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 class BasePage:
-    PROFILE_DROPDOWN = (By.CSS_SELECTOR, '[data-bui-component="Dropdown"]')
+    PROFILE_DROPDOWN = (By.CSS_SELECTOR, '[data-testid="header-profile"]')
+    body = (By.CSS_SELECTOR, 'body')
+
 
     def __init__(self, driver, url):
         self.driver = driver
@@ -24,7 +26,7 @@ class BasePage:
         return Wait(self.driver, timeout).until(EC.visibility_of_all_elements_located(locator))
 
     def element_is_attached(self, locator, timeout=15):
-        return Wait(self.driver, timeout).until(EC.presence_of_element_located(locator))
+        return Wait(self.driver, timeout).until(EC.element_to_be_clickable(locator))
 
     def click(self, locator, timeout=5):
         return Wait(self.driver, timeout).until(EC.element_to_be_clickable(locator)).click()
