@@ -19,6 +19,7 @@ def driver():
     # options.add_argument(
     #     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36")
     driver = webdriver.Chrome(options=options, service=driver_service)
+    # driver = webdriver.Chrome(options=options,service=driver_service, executable_path='/usr/bin/chromedriver')
     driver.set_window_size("1920", "1080")
     yield driver
     driver.quit()
