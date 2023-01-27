@@ -19,8 +19,8 @@ def driver():
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option('useAutomationExtension', False)
     options.add_argument('--remote-debugging-port=9222')
-    options.add_argument(
-        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36")
+    # options.add_argument(
+    #     "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36")
     driver = webdriver.Chrome(options=options, service=driver_service)
     driver.maximize_window()
     yield driver
