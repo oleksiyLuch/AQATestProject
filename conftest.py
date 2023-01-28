@@ -30,3 +30,10 @@ def pytest_runtest_makereport(item, call) -> None:
         if call.excinfo is not None and "driver" in item.funcargs:
             page = item.funcargs["driver"]
             attach(data=page.get_screenshot_as_png())
+
+
+@pytest.fixture( autouse=True)
+def login(driver):
+    driver.get('https://www.booking.com/')
+
+    return print('page')
