@@ -2,3 +2,5 @@ venv/
 report/
 .idea/
 __pycache__/
+steps.txt
+.vscode
